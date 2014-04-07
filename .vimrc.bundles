@@ -63,7 +63,7 @@
             source ~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim
         endif
         Bundle 'Shougo/neocomplcache'
-        Bundle 'Shougo/neocomplcache-snippets-complete'
+        Bundle 'Shougo/neosnippets'
         Bundle 'honza/snipmate-snippets'
 " }
 

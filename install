@@ -17,3 +17,11 @@ git config --global --replace-all user.email $EMAIL
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 echo 'Completed git.'
+
+if [ -f ".vimrc" ]; then
+    echo 'Update vim...'
+    cp .vimrc ~/
+    cp .vimrc.bundles ~/
+    cd ~/ && vim +BundleInstall! +BundleClean +q
+    echo 'Completed vim update.'
+fi
