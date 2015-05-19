@@ -1,6 +1,6 @@
 #! /bin/sh
-NAME="Chris Ostrum"
-EMAIL="chris.ostrum@gmail.com"
+NAME=""
+EMAIL=""
 
 # Install programs
 echo 'Installing programs...'
@@ -17,3 +17,11 @@ git config --global --replace-all user.email $EMAIL
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 echo 'Completed git.'
+
+mkdir ~/dev
+cd ~/dev
+
+git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
+gnome-terminal-colors-solarized/install.sh
+
+git clone https://github.com/seebi/dircolors-solarized.git

@@ -1,7 +1,17 @@
-vnoremap <c-space> <esc>
-inoremap <c-space> <esc>
-nnoremap <c-space> :noh<cr>
+" Use control space to esc out of any mode
+nnoremap <c-space> <esc>:noh<cr>
+vnoremap <c-space> <esc>gV
+onoremap <c-space> <esc>
+cnoremap <c-space> <C-c>
+inoremap <c-space> <esc>`^
+" terminal uses control @...
+nnoremap <c-@> <esc>:noh<cr>
+vnoremap <c-@> <esc>gV
+onoremap <c-@> <esc>
+cnoremap <c-@> <C-c>
+inoremap <c-@> <esc>`^
 
+map     e <Plug>(easymotion-sn)
 noremap : ;
 noremap ; :
 noremap 0 g^
@@ -14,9 +24,12 @@ noremap K 3k
 nnoremap x "_x
 nnoremap s :w<cr>
 nnoremap S :sp<cr>
+nnoremap q <nop>
 nnoremap Q :q<cr>
 nnoremap C :call ToggleQuickfix()<cr>
 
+nnoremap th :tabp<cr>
+nnoremap tl :tabn<cr>
 noremap gv `[v`]
 vnoremap < <gv
 vnoremap > >gv
@@ -29,7 +42,6 @@ noremap <c-p> "+p
 set pastetoggle=<F10>
 inoremap <c-p> <F10><C-r>+<F10>
 inoremap <c-h> <bs>
-inoremap <c-l> =>
 
 cnoremap <c-p> <c-r>+
 cnoremap <c-v> <c-r>"
@@ -44,35 +56,29 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-let g:user_emmet_leader_key='<c-e>'
 
 nnoremap <space> :NERDTreeToggle<cr>
-nnoremap <leader><space> :call RunLastSpec()<CR>
+nnoremap <leader><space> <nop>
 nnoremap <leader>. :NERDTreeFind<cr>
-nnoremap <leader>a :CtrlP ./app/<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
-nnoremap <leader>c <nop>
-nnoremap <leader>d <nop>
+"nnoremap <leader>d :call RunLastSpec()<CR>
 nnoremap <leader>e :CtrlP .<cr>
 nnoremap <leader>f :CtrlPTag<CR>
-nnoremap <leader>F !ctags -R .<cr>
-nnoremap <leader>g <nop>
+nnoremap <leader>g :TagbarToggle<CR>
 nnoremap <leader>h :nohlsearch<CR>
 nnoremap <leader>i <nop>
 nnoremap <leader>j <nop>
-nnoremap <leader>k <nop>
-nnoremap <leader>l :CtrlP ./lib/<cr>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>n :call RenameFile()<cr>
 nnoremap <leader>o <nop>
 nnoremap <leader>p <nop>
 "nnoremap <leader>q :qall!
 nnoremap <leader>q :qall
-nnoremap <leader>r :call RunCurrentSpecFile()<CR>
-nnoremap <leader>s :CtrlP ./spec/<CR>
-nnoremap <leader>t :call RunNearestSpec()<CR>
+nnoremap <silent> <leader>r :call ri#OpenSearchPrompt(0)<cr>
+nnoremap <silent> <leader>R :call ri#OpenSearchPrompt(1)<cr>
+nnoremap <silent> <leader>s :call ri#LookupNameUnderCursor()<cr>
 nnoremap <leader>u :source ~/.vimrc<cr>
-nnoremap <leader>v :sp ~/.vimrc<cr>
+nnoremap <leader>v :sp ~/.vimrc<cr>:vs ~/.vim/mappings.vim<cr>:sp ~/.vim/base.vim<cr>:vs ~/.vim/plugins.vim<cr>
 nnoremap <leader>w <nop>
 nnoremap <leader>x <nop>
 nnoremap <leader>y <nop>
@@ -83,14 +89,3 @@ nnoremap <leader><leader>j :Ag <Space>-G="*.(js\|coffee)" app<S-Left><S-Left><Le
 nnoremap <leader><leader>r :Ag <Space>-G="*.(rb\|rake)"<S-Left><Left>
 nnoremap <leader><leader>t :Ag <Space>-G="*_spec.rb" spec<S-Left><S-Left><Left>
 nnoremap <leader><leader>v :Ag <Space>-G="*.(erb\|slim)" app<S-Left><S-Left><Left>
-
-nmap <leader>0 :set foldlevel=0<CR>
-nmap <leader>1 :set foldlevel=1<CR>
-nmap <leader>2 :set foldlevel=2<CR>
-nmap <leader>3 :set foldlevel=3<CR>
-nmap <leader>4 :set foldlevel=4<CR>
-nmap <leader>5 :set foldlevel=5<CR>
-nmap <leader>6 :set foldlevel=6<CR>
-nmap <leader>7 :set foldlevel=7<CR>
-nmap <leader>8 :set foldlevel=8<CR>
-nmap <leader>9 :set foldlevel=9<CR>
