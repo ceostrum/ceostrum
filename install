@@ -4,7 +4,6 @@ EMAIL=""
 
 # Install programs
 echo 'Installing programs...'
-sudo apt-get install vim
 sudo apt-get install exuberant-ctags
 sudo apt-get install git
 sudo apt-get install cmake
