@@ -10,6 +10,8 @@ git clone http://luajit.org/git/luajit-2.0.git luajit
 cd luajit
 make PREFIX=$HOME
 make install PREFIX=$HOME
+cd
+rm -rf $HOME/dev/luajit
 
 # clone and configure/make vim
 echo "Clone and compile vim..."
@@ -19,6 +21,8 @@ cd vim
 ./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=$HOME/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --with-lua-prefix=$HOME --enable-largefile --enable-gui=auto --enable-gtk2-check --enable-gnome-check --enable-cscope --prefix=$HOME --with-x --with-compiledby="Chris Ostrum" --enable-fail-if-missing
 make
 make install
+cd
+rm -rf $HOME/dev/vim
 
 # make necessary directories
 mkdir -p $HOME/.vim/tmp
