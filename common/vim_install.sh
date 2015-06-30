@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# need cmake, libx11-dev, libxtst-dev, libxt-dev, libsm-dev, libxpm-dev,
+
 # clone and compile in $HOME/dev
 mkdir -p $HOME/dev/
 
@@ -18,7 +20,7 @@ echo "Clone and compile vim..."
 cd $HOME/dev
 git clone https://github.com/vim/vim.git vim
 cd vim
-./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=$HOME/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --with-lua-prefix=$HOME --enable-largefile --enable-gui=auto --enable-gtk2-check --enable-gnome-check --enable-cscope --prefix=$HOME --with-x --with-compiledby="Chris Ostrum" --enable-fail-if-missing
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=$HOME/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --with-lua-prefix=$HOME --enable-largefile --disable-gui --without-x --enable-cscope --prefix=$HOME --with-compiledby="Chris Ostrum" --enable-fail-if-missing
 make
 make install
 cd
