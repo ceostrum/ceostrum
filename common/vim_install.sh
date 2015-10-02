@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# need cmake, libx11-dev, libxtst-dev, libxt-dev, libsm-dev, libxpm-dev,
+# need cmake, libx11-dev, libxtst-dev, libxt-dev, libsm-dev, libxpm-dev, python-devel
 
 # clone and compile in $HOME/dev
 mkdir -p $HOME/dev/
@@ -32,9 +32,22 @@ cd $HOME/.vim/tmp
 mkdir backup swap undo
 
 # get vimrc
+echo "Clone .vimrc..."
 git clone https://github.com/ceostrum/vimrc.git $HOME/.vim/vimrc
 cd
+mv .vimrc .vimrc.bak
 ln -s .vim/vimrc/.vimrc .vimrc
 
+echo "Setup bundles..."
 git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/vundle.vim
 vim +PluginInstall +qall
+
+echo "Compile YCM..."
+cd $HOME/dev
+mkdir ycm_build
+cd ycm_build
+cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+make ycm_support_libs
+rm -rf $HOME/dev/ycm_build
+
+echo "Complete!"
