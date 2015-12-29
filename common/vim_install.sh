@@ -3,7 +3,7 @@
 # need cmake, libx11-dev, libxtst-dev, libxt-dev, libsm-dev, libxpm-dev, python-devel
 
 # clone and compile in $HOME/dev
-mkdir -p $HOME/dev/
+mkdir -p $HOME/dev/ 2> /dev/null
 
 # clone and make luajit
 echo "Clone and compile luajit..."
