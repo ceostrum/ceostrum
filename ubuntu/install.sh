@@ -24,7 +24,8 @@ if [ ! -d "$HOME/.solarized" ]; then
   ln -s ~/.solarized/dircolors-solarized/dircolors.256dark ~/.dir_colors
 
   git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
-  sh gnome-terminal-colors-solarized/install.sh -s dark_alternative
+  cd gnome-terminal-colors-solarized
+  ./install.sh -s dark_alternative
 fi
 
 echo 'Setting up Dotfiles'
