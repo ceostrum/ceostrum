@@ -15,6 +15,10 @@ make install PREFIX=$HOME
 cd
 rm -rf $HOME/dev/luajit
 
+# if ubuntu here ?
+mkdir -p $HOME/lib/x86_64-linux-gnu
+sudo ln -s /home/oz/lib/libluajit-5.1.so /home/oz/lib/x86_64-linux-gnu/luajit-5.1.so
+
 # clone and configure/make vim
 echo "Clone and compile vim..."
 cd $HOME/dev
@@ -30,13 +34,6 @@ rm -rf $HOME/dev/vim
 mkdir -p $HOME/.vim/tmp
 cd $HOME/.vim/tmp
 mkdir backup swap undo
-
-# get vimrc
-echo "Clone .vimrc..."
-git clone https://github.com/ceostrum/vimrc.git $HOME/.vim/vimrc
-cd
-mv .vimrc .vimrc.bak
-ln -s .vim/vimrc/.vimrc .vimrc
 
 echo "Setup bundles..."
 git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/vundle.vim

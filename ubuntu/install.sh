@@ -5,7 +5,7 @@ EMAIL="chris.ostrum@gmail.com"
 mkdir -p $HOME/dev 2> /dev/null
 
 echo 'Installing prerequisites...'
-sudo apt-get install automake libevent-dev libncurses5-dev tmux
+sudo apt-get install -y automake libevent-dev libncurses5-dev tmux libperl-dev libpython-dev
 
 echo 'Configuring git...'
 git config --global --replace-all user.name $NAME
@@ -32,6 +32,12 @@ echo 'Setting up Dotfiles'
 cd $HOME/dev
 git clone https://github.com/ceostrum/dotfiles.git
 cp dotfiles/.* $HOME
+
+echo 'Installing Ruby'
+gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s -- --ignore-dotfiles
+source $HOME/.rvm/scripts/rvm
+rvm install  2.2
 
 echo 'Installing VIM'
 cd $HOME/dev/ceostrum/common
