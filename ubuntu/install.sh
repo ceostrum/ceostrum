@@ -25,9 +25,9 @@ echo 'Programs installed.'
 echo 'Configuring git...'
 git config --global --replace-all user.name $NAME
 git config --global --replace-all user.email $EMAIL
-#git config --global push.default simple
-#git config --global credential.helper cache
-#git config --global credential.helper 'cache --timeout=3600'
+git config --global push.default simple
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
 echo 'Completed git.'
 
 echo 'Configuring terminal'
