@@ -17,13 +17,14 @@ rm -rf $HOME/dev/luajit
 
 # if ubuntu here ?
 mkdir -p $HOME/lib/x86_64-linux-gnu
-sudo ln -s /home/oz/lib/libluajit-5.1.so /home/oz/lib/x86_64-linux-gnu/luajit-5.1.so
+sudo ln -s /home/oz/lib/libluajit-5.1.so /home/oz/lib/x86_64-linux-gnu/libluajit-5.1.so
 
 # clone and configure/make vim
 echo "Clone and compile vim..."
 cd $HOME/dev
 git clone https://github.com/vim/vim.git vim
-cd vim
+cd vim/src
+make distclean
 ./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=$HOME/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --with-lua-prefix=$HOME --enable-largefile --disable-gui --without-x --enable-cscope --prefix=$HOME --with-compiledby="Chris Ostrum" --enable-fail-if-missing
 make
 make install

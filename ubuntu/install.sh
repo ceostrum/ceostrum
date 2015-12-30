@@ -36,8 +36,9 @@ cp dotfiles/.* $HOME
 echo 'Installing Ruby'
 gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s -- --ignore-dotfiles
-source $HOME/.rvm/scripts/rvm
+. $HOME/.rvm/scripts/rvm
 rvm install  2.2
+rvm use 2.2
 
 echo 'Installing VIM'
 cd $HOME/dev/ceostrum/common
