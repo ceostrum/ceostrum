@@ -1,0 +1,49 @@
+todo
+
+#TODO
+• ScanGen
+   X Verify ephemeris ingest
+   X Verify ephemeris interpolation
+   X Create client method to populate and order on the interp line for a given time period.
+   X Need to update orders to planned after inserting to the plan table
+   X Find planned events by querying for unplanned orders and using strip_id to correlate
+   X Update order status to planned when finished planning?
+   X Issue when hitting collection-orders no ephem
+   X test get umbra/penumbra code
+   X Check that orders are being updated to planned status after insert
+   X Create a better method to get the client to add a collect in the next rev
+   X Update build ecef events to order fulfilled and remove from plan table
+   X Should build or maybe replan also check for orders with state 1?
+   X Publish ntel to N configurable endpoints? TMS to start
+   / Verify distance calculator
+   / Verify ona calculator
+   / Update Rev info
+   • Check Top when slamming with 10+ orders to see if what bottle neck may be
+   • Status / Health managers
+   • IMS update data for each ECEF
+   • Use CPLQuery service
+
+   • Issues:
+      ◦ Planning in umbra? ECEFIMAGE collect times in ASC and DESC nodes
+      ◦ Where to get file_id and rev_numbers?
+         ▸ Ask the Mikes?
+
+   • Timers
+      ◦ Ephemeris timer daily
+      ◦ Build timer - based on umbra trigger?
+      ◦ Direct timer option?
+
+   • Low Priority
+      ◦ How to calculate image duration? is it the same as scan duration?
+      ◦ Encrypt key part of the order? if so how do we then look it up prior to wbpbk?
+
+• CG
+   X CPL Query Service
+
+• TMS
+   • Status stuff
+   • Revoked stuff
+   • TEL mapping inserts on tel post
+
+• General
+   • Refactor unit tests to load all ENVs needed not from Eureka/Config service.

@@ -1,0 +1,63 @@
+git
+
+# Commands
+
+## Branching
+*Create branch*
+git checkout -b <branch_name>
+
+*Fix issue*
+*Commit fix*
+
+*Checkout master*
+git checkout master
+
+*Merge*
+git merge <branch_name>
+
+## Fork / Pull request
+https://help.github.com/articles/fork-a-repo/
+https://help.github.com/articles/syncing-a-fork/
+https://help.github.com/articles/using-pull-requests/
+
+## Fork workflow
+*Fork via github gui*
+git clone <original_repo.git>
+
+*Create fetch upstream - optional*
+git remote add upstream <original_repo.git>
+git fetch upstream
+
+*Check out local fork master*
+git checkout master
+
+*Merge upstream master into local master*
+git merge upstream/master
+
+*Fetch and merge via a Pull instead*
+git pull upstream master
+
+*Fix issue*
+git branch <branch_name>
+git checkout <branch_name>
+OR
+git checkout -b <branch_name>
+
+*Push branch*
+git push -u origin <branch_name>
+
+*Create pull reuest via github gui*
+
+*Delete branch*
+
+## Push existing repository (after git init)
+git remote add origin https://<repo>.git
+git push -u origin master
+
+## Tags
+git tag -a [tag_name] -m ‘msg’
+git push origin --tags
+git push origin [tag_name]
+
+# Create branch at tag
+git checkout -b [branch_name] [tag_name]

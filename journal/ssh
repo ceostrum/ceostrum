@@ -1,0 +1,7 @@
+ssh
+
+ssh-keygen -t dsa
+ssh b@B mkdir -p .ssh
+cat .ssh/id_dsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
+
+@mykeyword
