@@ -1,9 +1,0 @@
-gem
-
-Create:
-bundle gem my_gem
-
-Creates a .git file, and all directories.
-Edit gemspec.
-Edit main module.
-
