@@ -17,7 +17,7 @@ rm -rf $HOME/dev/luajit
 
 # if ubuntu here ?
 mkdir -p $HOME/lib/x86_64-linux-gnu
-sudo ln -s /home/oz/lib/libluajit-5.1.so /home/oz/lib/x86_64-linux-gnu/libluajit-5.1.so
+sudo ln -s $HOME/lib/libluajit-5.1.so $HOME/lib/x86_64-linux-gnu/libluajit-5.1.so
 
 # clone and configure/make vim
 echo "Clone and compile vim..."
@@ -44,7 +44,7 @@ echo "Compile YCM..."
 cd $HOME/dev
 mkdir ycm_build
 cd ycm_build
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+cmake -G "Unix Makefiles" . ~/.vim/bundle/youcompleteme/third_party/ycmd/cpp
 make ycm_support_libs
 rm -rf $HOME/dev/ycm_build
 
