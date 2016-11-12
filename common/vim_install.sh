@@ -45,7 +45,7 @@ cd $HOME/dev
 mkdir ycm_build
 cd ycm_build
 cmake -G "Unix Makefiles" . ~/.vim/bundle/youcompleteme/third_party/ycmd/cpp
-make ycm_support_libs
+cmake --build . --target ycm_core --config Release
 rm -rf $HOME/dev/ycm_build
 
 echo "Complete!"
