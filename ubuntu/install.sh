@@ -1,6 +1,6 @@
 #! /bin/sh
-NAME="Chris Ostrum"
-EMAIL="chris.ostrum@gmail.com"
+NAME=""
+EMAIL=""
 
 mkdir -p $HOME/dev 2> /dev/null
 
